@@ -1,0 +1,844 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Natureoilsupplier - 100% Natural Cocoa & Shea Butter | Pure Quality Ingredients</title>
+    <meta name="author" content="Natureoilsupplier">
+    <meta name="description" content="Indulge in the finest 100% natural cocoa and shea butter products. Discover pure, unrefined quality sourced responsibly to enhance your beauty and wellness routines.">
+    <meta name="keywords" content="Indulge in the finest 100% natural cocoa and shea butter products. Discover pure, unrefined quality sourced responsibly to enhance your beauty and wellness routines.">
+    <meta name="robots" content="INDEX,FOLLOW">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="144x144"  href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/nature_oil_png_2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/nature_oil_png_2.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/nature_oil_png_2.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/nature_oil_png_2.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/nature_oil_png_2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/nature_oil_png_2.png">  <link rel="apple-touch-icon" sizes="57x57" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="144x144"  href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/fav_icon_nature_oil.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/fav_icon_nature_oil.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/nature_oil_Logo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/nature_oil_Logo.jpg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/nature_oil_Logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/nature_oil_Logo.jpg">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+
+  
+    <script>
+        $(document).ready(function () {
+            function hideErrorMessages() {
+                $('.error-message').hide();
+            }
+    
+            // Show notification function
+            function showNotification(message) {
+                $('#notificationMessage').text(message);
+                $('#notificationModal').show();
+            }
+    
+            // Close modal when the user clicks on <span> (x)
+            $('.close').on('click', function () {
+                $('#notificationModal').hide();
+            });
+            document.getElementById('okButton').addEventListener('click', function() {
+    document.getElementById('notificationModal').style.display = 'none'; // Hide the modal
+
+    // Clear the form fields
+    $('#contactForm')[0].reset(); 
+    hideErrorMessages(); 
+});
+    
+            $('#name').on('input', function () {
+                const nameValue = $(this).val(); // Allow leading/trailing spaces
+                if (/[^a-zA-Z\s]/.test(nameValue)) {
+                    $('#name-error').text('Name cannot contain numbers or special characters.').show();
+                    $(this).val(nameValue.replace(/[^a-zA-Z\s]/g, '')); // remove invalid characters
+                } else if (nameValue.trim() === '') { // Check for empty after trim
+                    $('#name-error').text('Name cannot be empty.').show();
+                } else {
+                    $('#name-error').hide();
+                }
+            });
+    
+            $('#number').on('input', function () {
+                const phoneNumber = $(this).val();
+
+                if (/[^0-9]/.test(phoneNumber)) {
+                    $('#number-error').text('Phone number can only contain digits.').show();
+                    $(this).val(phoneNumber.replace(/[^0-9]/g, '')); // remove invalid characters
+                } 
+                // Limit phone number to 15 digits
+                else if (phoneNumber.length > 15) {
+                    $('#number-error').text('Phone number cannot exceed 15 digits.').show();
+                    $(this).val(phoneNumber.substring(0, 15)); // only keep the first 15 digits
+                } else {
+                    $('#number-error').hide();
+                }
+            });
+
+            $('#email').on('keypress', function (e) {
+                if (e.which === 32) { // 32 is the key code for the spacebar
+                    e.preventDefault(); // Prevent space from being entered
+                }
+            });
+    
+            // Validate input on typing
+            $('#email').on('input', function () {
+                let emailValue = $(this).val();
+    
+                // Check for spaces and missing @ symbol
+                if (/\s/.test(emailValue)) {
+                    $('#email-error').text('Email cannot contain spaces.').addClass('error-text').show();
+                } else if (!/@/.test(emailValue)) {
+                    $('#email-error').text('Email must contain an @ symbol.').addClass('error-text').show();
+                } else {
+                    $('#email-error').hide(); // Hide error message if valid
+                }
+    
+                // Remove any whitespace from the input value
+                $(this).val(emailValue.replace(/\s/g, ''));
+            });
+    
+            // Form submission handler
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission
+                hideErrorMessages();
+
+                let isValid = true;
+
+                if ($('#name').val().trim() === '') {
+                    $('#name-error').text('Name is required.').show();
+                    isValid = false;
+                }
+
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+                const emailValue = $('#email').val().trim();
+    
+                if (emailValue === '') {
+                    $('#email-error').text('Email is required.').addClass('error-text').show();
+                    isValid = false;
+                } else if (!emailPattern.test(emailValue)) {
+                    $('#email-error').text('Invalid email format. Must contain @ and a domain.').addClass('error-text').show();
+                    isValid = false;
+                } else {
+                    $('#email-error').hide(); 
+                }
+
+                const phoneNumber = $('#number').val().trim();
+                if (phoneNumber === '') {
+                    $('#number-error').text('Phone number is required.').show();
+                    isValid = false;
+                } else if (phoneNumber.length > 15) {
+                    $('#number-error').text('Phone number cannot exceed 15 digits.').show();
+                    isValid = false;
+                }
+    
+                // Validate subject selection
+                if ($('#subject').val() === '' || $('#subject').val() === null) {
+                    $('#subject-error').text('Please select a product interest.').show();
+                    isValid = false;
+                } else {
+                    $('#subject-error').hide(); // Hide the error if a valid option is selected
+                }
+    
+                // If valid, proceed with AJAX request
+                if (isValid) {
+                    $('.loaders').css('display', 'flex'); // Show the loader before the API call
+    
+                    // Collect form data with the required structure
+                    const formData = {
+                        id: 12,
+                        email: $('#email').val(),
+                        name: $('#name').val(),
+                        phoneNumber: phoneNumber,
+                        serviceType: $('#subject').val() || null, // Send null if empty
+                        address: null,
+                        description: $('#message').val() || null // Send null if empty
+                    };
+    
+                    // Log the form data for debugging
+                    console.log("Form Data:", JSON.stringify(formData));
+    
+                    // Send the AJAX request to the API
+                    $.ajax({
+                        url: 'https://static.promena.in/SendMail',
+                        type: 'POST',
+                        data: JSON.stringify(formData),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (response) {
+                            $('.loaders').hide(); // Hide the loader
+                            showNotification("Thank you for contacting us, We will get back to you");
+                        },
+                        error: function (xhr, status, error) {
+                            $('.loaders').hide(); // Hide the loader
+                            console.error("Error details:", xhr.responseText);
+                            showNotification("Oops! Something went wrong, please try again.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style>
+      .loaders {
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Ensure it sits above other elements */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background: rgba(255, 255, 255, 0.9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling when loader is visible */
+}
+
+.loaders .spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #017d03; /* Green color */
+    border-radius: 50%; /* Rounded shape */
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Spinner animation */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+        .error-text {
+    color: red !important;
+}
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;  /* Full width */
+            height: 100%;  /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+        
+        .error-message {
+    float: left;
+    margin-left: 21px; /* Add some spacing from the input */
+}
+    
+        .modal-content {
+            background-color: #fefefe;
+            margin: 18% auto; /* 10% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            align-items: center;
+            width: 80%; /* Set a width for the modal */
+            max-width: 600px; /* Max width to prevent it from being too wide */
+            border-radius: 10px; /* Optional: Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+        }
+        .modal-content p {
+    margin: 10px 0; /* Spacing between paragraphs */
+    font-size: 16px; /* Adjust font size */
+    line-height: 2.5; /* Line height for readability */
+    text-align: center; /* Center the text */
+    color: #017d03;
+    font-weight: 700;
+}
+    
+        .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: end;
+        justify-content: flex-end;
+    }
+    
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+    
+        #notificationMessage {
+            color: #017d03; 
+            font-size: 19px; 
+            line-height: 2.5; 
+        }
+        #okButton {
+            background-color: #017d03;
+    color: white;
+    border: none;
+    padding: 10px 49px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+#okButton:hover {
+    background-color: #015d02; 
+}
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Swiper Js -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="sidemenu-wrapper sidemenu-cart d-none d-lg-block ">
+        <div class="sidemenu-content">
+            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+            <div class="widget woocommerce widget_shopping_cart">
+                <h3 class="widget_title">Shopping cart</h3>
+                <div class="widget_shopping_cart_content">
+                    <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                        <li class="woocommerce-mini-cart-item mini_cart_item">
+                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
+                            <a href="#"><img src="assets/img/product/product_thumb_1_1.jpg" alt="Cart Image">Bosco Apple Fruit</a>
+                            <span class="quantity">1 ×
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>940.00</span>
+                            </span>
+                        </li>
+                        <li class="woocommerce-mini-cart-item mini_cart_item">
+                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
+                            <a href="#"><img src="assets/img/product/product_thumb_1_2.jpg" alt="Cart Image">Green Cauliflower</a>
+                            <span class="quantity">1 ×
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>899.00</span>
+                            </span>
+                        </li>
+                        <li class="woocommerce-mini-cart-item mini_cart_item">
+                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
+                            <a href="#"><img src="assets/img/product/product_thumb_1_3.jpg" alt="Cart Image">Mandarin orange</a>
+                            <span class="quantity">1 ×
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>756.00</span>
+                            </span>
+                        </li>
+                        <li class="woocommerce-mini-cart-item mini_cart_item">
+                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
+                            <a href="#"><img src="assets/img/product/product_thumb_1_4.jpg" alt="Cart Image">Shallot Red onion</a>
+                            <span class="quantity">1 ×
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>723.00</span>
+                            </span>
+                        </li>
+                        <li class="woocommerce-mini-cart-item mini_cart_item">
+                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
+                            <a href="#"><img src="assets/img/product/product_thumb_1_5.jpg" alt="Cart Image">Sour Red Cherry</a>
+                            <span class="quantity">1 ×
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>1080.00</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <p class="woocommerce-mini-cart__total total">
+                        <strong>Subtotal:</strong>
+                        <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">$</span>4398.00</span>
+                    </p>
+                    <p class="woocommerce-mini-cart__buttons buttons">
+                        <a href="cart.html" class="th-btn wc-forward">View cart</a>
+                        <a href="checkout.html" class="th-btn checkout wc-forward">Checkout</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-search-box d-none d-lg-block">
+        <button class="searchClose"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" placeholder="What are you looking for?">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div><!--==============================
+    Mobile Menu
+  ============================== -->
+    <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/nature_oil_png_3.png" alt="Natureoilsupplier"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                        
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Products</a>
+                        <ul class="sub-menu">
+                            <li><a href="cocoa-beans.html">Cocoa Beans</a></li>
+                            <li><a href="Cocoa-Butter.html">Cocoa Butter</a></li>
+                            <li><a href="mass-cocoa.html">Mass Cocoa</a></li>
+                            <li><a href="baobab-oil.html">Baobab Oil</a></li>
+                            <li><a href="shea-butter.html">Shea Butter</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<header class="th-header header-layout2">
+    <div class="sticky-wrapper">
+        <div class="container">
+            <div class="z-index-common">
+                        <div class="col-auto d-none d-lg-block">
+                        </div>
+                            <div class="header-links">
+                    </div>
+                </div>
+                <div class="menu-area">
+                    <div class="logo-bg"></div>
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="index.html" class="custom-margin"><img src="assets/nature2.png" alt="Natureoilsupplier"></a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-lg-inline-block">
+                                <ul>
+                                    <li>
+                                        <a href="index.html">Home</a>
+                                        
+                                    </li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Products</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="cocoa-beans.html">Cocoa Beans</a></li>
+                                            <li><a href="Cocoa-Butter.html">Cocoa Butter</a></li>
+                                            <li><a href="mass-cocoa.html">Mass Cocoa</a></li>
+                                            <li><a href="baobab-oil.html">Baobab Oil</a></li>
+                                            <li><a href="shea-butter.html">Shea Butter</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <div class="breadcumb-wrapper " data-bg-src="assets/img/service/Shea_Butter_Banner.jpg">
+        <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">shea-butter</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li>shea-butter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="space-top space-extra-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-lg-8">
+                    <div class="page-single mb-30">
+                        <div class="page-img">
+                            <video controls width="800">
+                                <source src="assets/img/service/Shea butter Video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                                    <div class="page-content">
+                                        <h2 class="sec-title page-title" id="shea">Shea Butter
+                                        </h2>
+                                        <p class="">Shea butter is a rich, creamy fat extracted from the nuts of the shea tree. Revered for its deep moisturizing and healing properties, shea butter has been used for centuries to treat skin conditions, improve hair texture, and protect against harsh environmental elements. Our shea butter is handcrafted by women’s cooperatives in Burkina Faso, preserving its natural purity.
+            
+                                        </p>
+            
+                                        <div class="service-feature-wrap">
+                                            <div class="service-feature">
+                                                <div class="box-icon">
+                                                    <img src="assets/img/1.svg" alt="Icon">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="box-title">100% Pure</h4>
+                                                    <p class="box-text">Our products are crafted with 100% pure ingredients, delivering authentic and high-quality results.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="service-feature">
+                                                <div class="box-icon">
+                                                    <img src="assets/img/paraben.svg" alt="Icon">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="box-title">Paraben-Free</h4>
+                                                    <p class="box-text">Our formulations are free from parabens, avoiding synthetic preservatives for a more natural choice.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="row mt-40 gx-40">
+                                            <div class="col-md-6 mb-30 ">
+                                                <img class="rounded-20  " src="assets/img/service/Shea_Butter_382_300.jpg" alt="service">
+                                            </div>
+                                            <div class="col-md-6 mb-30">
+                                                <h4 class="mt-n1">Origin of the Product</h4>
+                                                <p class="mb-4">Shea butter is sourced from the shea trees of Burkina Faso, a country recognized as one of the world’s largest producers of shea nuts. The trees grow in the wild, with no need for fertilizers or pesticides, and are an important part of the country’s economy, particularly for women in rural communities.
+            
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-20">Shea Butter: Benefits and Best Uses
+                                        </h4>
+                                        <p class="mb-n2">Shea butter is an essential ingredient in beauty, skincare, and wellness products due to its rich content of fatty acids and vitamins. It acts as a natural emollient, soothing and moisturizing dry, irritated skin while promoting healing.
+                                        </p>
+                                        <div class="accordion mt-40" id="faqAccordion">
+                                            <div class="accordion-card">
+                                                <div class="accordion-header" id="collapse-item-1">
+                                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">Skincare products (body butters, lotions, lip balms)
+                                                    </button>
+                                                </div>
+                                                <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        <p class="faq-text">Our shea butter and baobab oil provide rich, nourishing hydration, making them perfect for luxurious body butters, soothing lotions, and moisturizing lip balms that keep skin soft and supple.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-card">
+                                                <div class="accordion-header" id="collapse-item-2">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Haircare (deep conditioning treatments and scalp moisturizers)
+                                                    </button>
+                                                </div>
+                                                <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        <p class="faq-text">Baobab oil's deeply moisturizing properties make it an excellent choice for deep conditioning treatments and scalp moisturizers, promoting healthy, shiny hair and a balanced scalp.
+            
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-card">
+                                                <div class="accordion-header" id="collapse-item-3">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Natural healing salves and ointments for burns, scars, and eczema
+                                                    </button>
+                                                </div>
+                                                <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        <p class="faq-text">Shea butter’s healing properties make it ideal for creating natural salves and ointments that soothe and repair skin affected by burns, scars, and eczema, offering relief and promoting healing.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-40 gx-40">
+                                                <div class="col-md-6 mb-30">
+                                                    <img class="rounded-20 w-100" src="assets/img/service/Shea_butter.jpg" alt="service">
+                                                </div>
+                                                <div class="col-md-6 mb-30">
+                                                    <h4 class="mt-n1">Cultivation Method</h4>
+                                                    <p class="mb-4">Shea butter is produced through a labor-intensive process that has been passed down through generations. Shea nuts are harvested from the shea tree, dried, roasted, and then ground into a paste. This paste is mixed with water and kneaded by hand to separate the fat, which is then boiled to produce pure shea butter. The entire process is done by women’s cooperatives in Burkina Faso, promoting sustainable livelihoods and preserving traditional methods.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-lg-4">
+                    <aside class="sidebar-area ">
+                        <div class="widget widget_categories   ">
+                            <h3 class="widget_title">Products</h3>
+                            <ul>
+                                <li>
+                                    <a href="cocoa-beans.html">Cocoa Beans</a>
+                                </li>
+                                <li>
+                                    <a href="Cocoa-Butter.html">Cocoa Butter</a>
+                                </li>
+                                <li>
+                                    <a href="mass-cocoa.html">Mass Cocoa</a>
+                                </li>
+                                <li>
+                                    <a href="baobab-oil.html">Baobab Oil</a>
+                                </li>
+                                <li>
+                                    <a href="shea-butter.html">Shea Butter</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget widget_download  ">
+                            <h4 >Ethical Sourcing</h4>
+                            <div class="download-widget-wrap">
+                                <P>We select ingredients that are alcohol-free, vegan, and non-toxic, ensuring ethical and cruelty-free practices.
+                                </P>
+                            </div>
+                        </div>
+                        <div class="widget widget_download  ">
+                            <h4 >Rigorous Testing
+                            </h4>
+                            <div class="download-widget-wrap">
+                                <P>Our products are tested to be free from parabens, artificial colors, and harmful additives, ensuring purity and safety.
+                                </P>
+                            </div>
+                        </div>
+                        <div class="widget widget_download  ">
+                            <h4 >Sustainable Practices</h4>
+                            <div class="download-widget-wrap">
+                                <P>We use eco-friendly methods and support fair trade, promoting environmental sustainability and community empowerment.
+                                </P>
+                            </div>
+                        </div>
+                        <div class="widget widget_download  ">
+                            <h4 >Transparent Processes
+                            </h4>
+                            <div class="download-widget-wrap"> 
+                                <P>Our operations are transparent, from sourcing to final product, maintaining high standards of quality and ethical responsibility.
+                                </P>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer-wrapper footer-layout2">
+    <div class="container z-index-common">
+        <div class="newsletter-wrap">
+            <div class="newsletter-content">
+<div class="space-bottom1">
+    <div class="container mt-4 mb-4">
+        <form id="contactForm" class="contact-form input-smoke ">
+            <h2 class="sec-title">Get In Touch</h2>
+            <h5>Interested in our products? Reach out to us for more information or to place an order.</h5>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                    <span class="error-message" id="name-error" style="color: red; display: none;">Name is required.</span>
+                    <i class="fal fa-user"></i>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                    <span class="error-message" id="email-error" style="color: red; display: none;">Email must end with @</span>
+                    <i class="fal fa-envelope"></i>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="tel" class="form-control" name="number" id="number" placeholder="Phone Number">
+                    <span class="error-message" id="number-error" style="color: red; display: none;">Phone number cannot exceed 15 digits.</span>
+                    <i class="fal fa-phone"></i>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="subject" id="subject" class="form-select">
+                        <option value="" disabled selected hidden>Product Interest</option>
+                        <option value="Cocoa Beans">Cocoa Beans</option>
+                        <option value="Cocoa Butter">Cocoa Butter</option>
+                        <option value="Mass Cocoa">Mass Cocoa</option>
+                        <option value="Shea Butter">Shea Butter</option>
+                        <option value="Baobab Oil">Baobab Oil</option>
+                    </select>
+                    <span class="error-message" id="subject-error" style="color: red; display: none;">Please select a product interest.</span>
+                    <i class="fal fa-chevron-down"></i>
+                </div>
+                <div class="form-group col-12">
+                    <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
+                    <i class="fal fa-pencil"></i>
+                </div>
+                <div class="form-btn col-12">
+                    <button type="submit" class="th-btn btn-fw">Send Message<i class="fas fa-chevrons-right ms-2"></i></button>
+                </div>
+            </div>
+            <div class="loaders" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+            <p class="form-messages mb-0 mt-3"></p>
+        </form>
+
+        <!-- Notification Modal -->
+        <div id="notificationModal" class="modal">
+            <div class="modal-content">
+                <p id="notificationMessage">Thank you for contacting us, We will get back to you</p>
+                <button id="okButton">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="widget-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <div class="th-widget-about">
+                            <div class="about-logo">
+                                <a href="index.html"><img src="assets/nature_oil_png_3.png" alt="Natureoilsupplier"></a>
+                            </div>
+                            <p class="about-text">We are a collective of West African producers and exporters, committed to sharing the rich agricultural heritage of the Ivory Coast and Burkina Faso with the world.
+                                </p>
+                                <div class="th-social">
+                                    <a href="https://x.com/i/flow/login?redirect_after_login=%2FNatureOil_123"><img src="assets/img/Twitter 1 1.svg" alt="Twitter X" ></a>
+                                    <a href="https://www.instagram.com/natureoilsupplier/"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://wa.me/447739707783" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                      </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_nav_menu footer-widget">
+                        <h3 class="widget_title"><img src="assets/img/theme-img/title_icon.svg" alt="Icon">Products</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li><a href="cocoa-beans.html">Cocoa Beans</a></li>
+                                <li><a href="Cocoa-Butter.html">Cocoa Butter</a></li>
+                                <li><a href="mass-cocoa.html">Mass Cocoa</a></li>
+                                <li><a href="baobab-oil.html">Baobab Oil</a></li>
+                                <li><a href="shea-butter.html">Shea Butter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_nav_menu footer-widget">
+                        <h3 class="widget_title"><img src="assets/img/theme-img/title_icon.svg" alt="Icon">Quick Links</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title"><img src="assets/img/theme-img/title_icon.svg" alt="Icon">Contact Us</h3>
+                        <div class="th-widget-contact">
+                            <div class="info-box">
+                                <div class="info-box_icon">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <p class="info-box_text">England </p>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box_icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <p class="info-box_text">
+                                    <a href="tel:+447739797783" class="info-box_link">+(447)-7397-97783</a>
+                                </p>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box_icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p class="info-box_text">
+                                    <a href="mailto:maguy.kassi@natureoilsupplier.com" class="info-box_link">maguy.kassi@natureoilsupplier.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap" data-bg-src="assets/img/bg/copyright_bg_1.png">
+        <div class="container">
+            <div class="row gy-2 align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 NatureOilSupplier. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="payment-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+
+    <!-- Jquery -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Swiper Js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Counter Up -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- Range Slider -->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- Isotope Filter -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+
+    <!-- Main Js File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
