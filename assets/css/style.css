@@ -5226,7 +5226,12 @@ ol.wp-block-rss {
 .custom-margin {
   margin-top: 3vw;
   margin-left: 2vw;
-  width: 231px;
+  width: 310px;
+}
+@media (max-width:400px) {
+  .custom-margin {
+    width: 210px;
+  }
 }
 
 .header-links ul {
